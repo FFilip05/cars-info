@@ -1,6 +1,9 @@
-import CarCard from '@/app/components/car-card';
+"use client"
+import CarCard from '@/app/components/CarCard';
 import { Car } from '@/types/car';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation'
+
 
 async function getData() {
   const response = await fetch("http://localhost:3000/api/cars", {cache: "no-cache"});
@@ -10,13 +13,16 @@ async function getData() {
   return await response.json();
 }
 export default async function Page() {
-  const Cars = await getData()
+  const router = useRouter();
+  const Cars = await getData();
+  const handleOnClick = (id: string) => {
+    router.replace(`cars/${id}`)
+    }
  return (
    <div >
-     <h1 className='text-6xl text-black text-center'>Cars:</h1>
      <div className=' grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 justify-between content-center px-32'>
          {Cars.map((x: Car) => (
-          <CarCard key={x.id} params={x}/>
+          <CarCard key={x.id} params={x} onClick={handleOnClick}/>
          ))} 
      </div>
    </div>
