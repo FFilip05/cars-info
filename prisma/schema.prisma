@@ -9,9 +9,38 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+model Engine {
+  id            String     @id @default(uuid())
+  name          String
+  displacement   String
+  hp            Int
+  tq            Int
+  cars          Car[]
+}
 
 model Car {
-  id    String     @id @default(uuid())
-  make String 
-  name  String
+  id            String     @id @default(uuid())
+  make          String
+  name          String
+  engines       Engine[]
+  offers        Offer[]
+}
+
+model Offer {
+  id            String     @id @default(uuid())
+  title          String
+  desc          String
+  user          User       @relation(fields: [userId], references: [id])
+  userId        String
+  car           Car        @relation(fields: [carId], references: [id])
+  carId         String
+  price         Float
+  mileage       Int
+  year          Int
+  createdAt     DateTime
+}
+
+model User {
+  id            String     @id @default(uuid())
+  offers        Offer[]
 }
