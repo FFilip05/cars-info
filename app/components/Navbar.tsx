@@ -6,10 +6,11 @@ export default function App() {
   return (
     <div className=" px-32 py-4   bg-sky-400">
   <div className="flex justify-between items-center">
-    <div className="font-bold">CarX</div>
+    <Link href="/" className="font-bold text-5xl">Carx</Link>
     <div className="hidden md:flex space-x-4">
       <Link href="/cars" className="font-medium">Cars</Link>
-      <Link href="/create" className="font-medium">Create</Link>
+      <Link href="/offers" className="font-medium">Offers</Link>
+      <Link href="/create" className="font-medium">Create Offer</Link>
       <Link href="#" className="font-medium">Sign Up</Link>
       <Link href="#" className="font-medium">Log In</Link>
     </div>
