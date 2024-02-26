@@ -24,12 +24,11 @@ const handleOnClick = () => {
     router.push(`/cars/${params.id}`);
 }
   return (
-
-    <div className="p-4 shadow-xl border-solid border-2 rounded-lg border-black bg-white hover:cursor-pointer" onClick={handleOnClick}>
+    <div className="flex flex-col justify-center items-center p-4 shadow-xl border-solid border-2 rounded-lg border-black bg-white hover:cursor-pointer" onClick={handleOnClick}>
         <img src={`logos/`.concat(params.make.toLowerCase().replace(/ /g,'')).concat(".webp")}  alt="car" width={400} />
 <div>
-    <div className="flex flex-row justify-start gap-5 uppercase border-10 border-black-100 drop-shadow-xl m-auto ">
-      <div className="flex flex-col font-bold justify-center ">
+    <div className="flex flex-row items-center gap-5 uppercase border-10 border-black-100 drop-shadow-xl m-auto ">
+      <div className="flex flex-col font-bold items-center">
       <h1 className="text-4xl font-black ">{params.name}</h1>
       <p>{params.make}</p>
       </div>
@@ -39,7 +38,6 @@ const handleOnClick = () => {
       </div> */}
     </div>
     </div>
-    <div></div>
     </div>
     
     // <Card

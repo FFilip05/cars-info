@@ -4,9 +4,9 @@ import Link from "next/link";
 
 export default function App() {
   return (
-    <div className=" px-32 py-4   bg-sky-400">
+    <div className="px-32 py-4 bg-sky-400">
   <div className="flex justify-between items-center">
-    <Link href="/" className="font-bold text-5xl">Carx</Link>
+    <Link href="/" className="font-bold text-5xl">CarX</Link>
     <div className="hidden md:flex space-x-4">
       <Link href="/cars" className="font-medium">Cars</Link>
       <Link href="/offers" className="font-medium">Offers</Link>
