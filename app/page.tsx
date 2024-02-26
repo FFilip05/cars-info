@@ -9,7 +9,7 @@ export default function Home() {
       <Link href={"/cars"} className='rounded-lg bg-white p-2 w-fit'>Show more!</Link>
       </div>
       <div>
-        <img src="car.svg" alt="car" width={400} />
+        <img src="car.svg" alt="car" width={400} className="drop-shadow-2xl" />
         </div>
        </div>
     </main>
